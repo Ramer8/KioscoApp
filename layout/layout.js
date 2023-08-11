@@ -3,7 +3,7 @@ import Modal from "react-modal"
 import { ToastContainer } from "react-toastify"
 import Sidebar from "../components/Sidebar"
 import Steps from "../components/Steps"
-import ModalProduct from "../components/modalProduct"
+import ModalProduct from "../components/ModalProduct"
 import useKiosk from "../hooks/useKiosk"
 import ModalQuestion from "../components/ModalQuestion"
 

@@ -32,28 +32,6 @@ const Category = ({ category }) => {
           </div>
         </button>
       </div>
-      {/* <div
-        className={`${
-          currentCategory?.id === id ? "bg-amber-400 text-amber-600" : ""
-        }
-        flex items-center w-full my-2  bg-gray-200 dark:bg-slate-800 rounded-xl gap-4 p-5 hover:bg-amber-400`}
-      >
-        <Image
-          width={70}
-          height={70}
-          src={`/assets/img/icono_${icon}.svg`}
-          alt="icon image"
-          className="mx-2"
-        />
-
-        <button
-          type="button"
-          className="text-2xl font-bold hover:cursor-pointer "
-          onClick={() => handleClickCategory(id)}
-        >
-          {name}
-        </button>
-      </div> */}
     </div>
   )
 }

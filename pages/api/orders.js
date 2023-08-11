@@ -22,3 +22,4 @@ export default async function handler(req, res) {
     res.status(200).json(order)
   }
 }
+// esta info la veré en la siguiente url ==> "http://localhost:3000/admin"
