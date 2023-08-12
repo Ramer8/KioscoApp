@@ -21,7 +21,7 @@ const ModalProduct = () => {
     <div className="md:flex gap-2">
       <div className="md:w-1/3 flex justify-center xl:w-1/2 2xl:w-1/2">
         <Image
-          className="rounded-xl"
+          className="rounded-xl sm:w-auto w-1/2 lg:w-auto pt-2 sm:pt-0"
           width={300}
           height={400}
           alt={`product image ${product.name}`}
@@ -48,13 +48,13 @@ const ModalProduct = () => {
           </button>
         </div>
         <div className="mx-5">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl md:text-2xl font-bold mt-5">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl md:text-2xl font-bold sm:mt-5 mt-2">
             {product.name}
           </h1>
-          <p className="mt-5 font-black text-2xl sm:text-3xl lg:text-5xl md:text-4xl text-amber-500">
+          <p className="sm:mt-5 mt-2 font-black text-2xl sm:text-3xl lg:text-5xl md:text-4xl text-amber-500">
             {formatMoney(product.price)}
           </p>
-          <div className="flex gap-6 mt-5 text-center text-xl  sm:text-2xl lg:text-3xl md:text-2xl">
+          <div className="flex gap-6 sm:mt-5 mt-2 text-center text-lg sm:text-2xl lg:text-3xl md:text-2xl">
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const ModalProduct = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-7 h-7"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 type="button"
                 onClick={() => {
                   if (amount <= 1) return
@@ -76,7 +76,7 @@ const ModalProduct = () => {
                 />
               </svg>
             </button>
-            <p className="text-3xl">{amount}</p>
+            <p className="text-lg sm:text-3xl">{amount}</p>
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const ModalProduct = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-7 h-7"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 type="button"
                 onClick={() => {
                   if (amount >= 5) return
@@ -100,7 +100,7 @@ const ModalProduct = () => {
             </button>
           </div>
           <button
-            className="bg-indigo-600 uppercase hover:bg-indigo-800 my-5 text-white font-bold rounded-xl px-5 py-2 w-auto"
+            className="bg-indigo-600 uppercase hover:bg-indigo-800 text-white font-bold rounded-xl sm:my-2 my-2 px-5 py-2 w-auto"
             type="button"
             onClick={() => {
               handleAddOrder({ ...product, amount }, handleChangeModal())

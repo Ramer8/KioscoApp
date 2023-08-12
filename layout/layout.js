@@ -42,7 +42,7 @@ export default function Layout({ children, pagina }) {
       {modal && (
         <Modal
           className={
-            "bg-opacity-60 text-white rounded-xl bg-black mt-20 sm:mx-auto md:w-10/12 xl:w-1/2 2xl:w-1/2"
+            "bg-opacity-60 text-white rounded-xl bg-black sm:mt-20 my-1 sm:mx-auto md:w-10/12 xl:w-1/2 2xl:w-1/2"
           }
           isOpen={modal}
           styles={customStyles}
@@ -53,7 +53,7 @@ export default function Layout({ children, pagina }) {
       {modalQuestion && (
         <Modal
           className={
-            "bg-opacity-60 text-white rounded-xl bg-black mt-40 sm:mx-auto md:w-1/3 xl:w-1/3 2xl:w-1/3"
+            "bg-opacity-60 text-white rounded-xl bg-black mt-40 sm:mx-auto md:w-1/3 xl:w-1/3 2xl:w-1/3 overflow-y-scroll"
           }
           isOpen={modalQuestion}
           styles={customStyles}

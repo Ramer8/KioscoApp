@@ -12,7 +12,7 @@ const SummaryProduct = ({ product }) => {
   } = useKiosk()
 
   return (
-    <div className=" shadow-slate-700 shadow p-5 mb-3 gap-10 items-center rounded-xl flex flex-wrap ">
+    <div className=" shadow-slate-700 shadow p-5 mb-3 sm:gap-10 gap-3 items-center rounded-xl flex flex-wrap ">
       <div className="md:w-1/6">
         <Image
           className="rounded-xl flex"
@@ -23,12 +23,14 @@ const SummaryProduct = ({ product }) => {
         />
       </div>
       <div className="md:w-3/6">
-        <p className="text-2xl font-bold">{product.name}</p>
-        <p className="text-xl font-bold mt-2">Amount: {product.amount}</p>
+        <p className="sm:text-2xl text-xl font-bold">{product.name}</p>
+        <p className="sm:text-2xl text-xl font-bold sm:mt-2 mt-1 ">
+          Amount: {product.amount}
+        </p>
         <p className="text-xl font-bold mt-2  text-amber-500">
           Price: {formatMoney(product.price)}
         </p>
-        <p className="text-sm font-bold mt-2  text-gray-400">
+        <p className="text-sm sm:mt-2 mt-1 font-bold  text-gray-400">
           Subtotal: {formatMoney(product.price * product.amount)}
         </p>
       </div>
@@ -44,7 +46,7 @@ const SummaryProduct = ({ product }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-4 h-4 mt-1 "
+            className="w-2 h-4 mt-1"
           >
             <path
               strokeLinecap="round"
@@ -56,7 +58,8 @@ const SummaryProduct = ({ product }) => {
         </button>
         <button
           type="button"
-          className="rounded-md flex gap-2 px-5 py-2 font-bold uppercase shadow bg-red-600 w-full hover:opacity-60 mt-3"
+          className="rounded-md flex gap-2 px-5 py-2 font-bold uppercase shadow bg-red-600 w-full hover:opacity-60 mt-3
+          "
           //   onClick={() => handleChangeModalQuestion(product.id)}
           onClick={() => handleDeleteProduct(product.id)}
         >

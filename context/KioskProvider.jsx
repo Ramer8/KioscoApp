@@ -18,11 +18,6 @@ const KioskProvider = ({ children }) => {
 
   const router = useRouter()
 
-  // aca leo las categorias del archivo no de la base de datos..? lo habre echo asi x q no andaba...?
-  //Si la lee de la base de datos x q esos archivos estan atados a la db
-  // Axios hace el fetch en /api/category porque corre en el misma ruta,
-  //osea en http://localhost:3000/api/category por eso solo pone /api/category x q ya estamos en 'localhost:3000'
-
   const getCategory = async () => {
     const data = await axios("/api/category")
     setCategory(data.data)
@@ -88,7 +83,6 @@ const KioskProvider = ({ children }) => {
         date: Date.now().toString(),
       })
       //Reset App
-      // setCurrentCategory(category[0])
       setOrder([])
       setName("")
       setTotal(0)

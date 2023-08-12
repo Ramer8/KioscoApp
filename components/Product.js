@@ -20,8 +20,8 @@ const Product = ({ products }) => {
       </div>
       <button
         type="button"
-        className="bg-indigo-600 hover:bg-indigo-800 sm:w-full mt-5 p-3
-                 text-white uppercase font-bold rounded-xl h-12 mx-20 w-full sm:mx-auto"
+        className="bg-indigo-600 hover:bg-indigo-800 font-bold rounded-xl
+                 text-white uppercase sm:w-full mt-5 p-3 h-12 mx-20 w-full sm:mx-auto"
         onClick={() => {
           handleChangeModal()
           handleSetProduct(products)
