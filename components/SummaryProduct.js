@@ -12,10 +12,14 @@ const SummaryProduct = ({ product }) => {
   } = useKiosk()
 
   return (
-    <div className=" shadow-slate-700 shadow p-5 mb-3 sm:gap-10 gap-3 items-center rounded-xl flex flex-wrap ">
+    <div
+      className=" shadow-slate-700 shadow p-5 mb-3 sm:gap-10 gap-3 items-center rounded-xl flex sm:flex flex-wrap 
+    "
+      id="Summary"
+    >
       <div className="md:w-1/6">
         <Image
-          className="rounded-xl flex"
+          className="rounded-xl"
           width={150}
           height={200}
           src={`/assets/img/${product.image}.jpg`}
@@ -30,23 +34,23 @@ const SummaryProduct = ({ product }) => {
         <p className="text-xl font-bold mt-2  text-amber-500">
           Price: {formatMoney(product.price)}
         </p>
-        <p className="text-sm sm:mt-2 mt-1 font-bold  text-gray-400">
+        <p className="text-sm sm:mt-2 mt-1 font-bold text-gray-400">
           Subtotal: {formatMoney(product.price * product.amount)}
         </p>
       </div>
-      <div className="md:w-1/6">
+      <div className="sm:w-auto w-11/12">
         <button
           type="button"
-          className="rounded-md flex gap-2 px-5 py-2 font-bold uppercase shadow bg-sky-600 w-full hover:opacity-60  "
+          className="rounded-md flex  items-centersm:flex gap-2 px-5 py-2 font-bold uppercase shadow bg-sky-600 w-full hover:opacity-60  "
           onClick={() => handleEditAmount(product.id)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
+            strokeWidth={1}
             stroke="currentColor"
-            className="w-2 h-4 mt-1"
+            className="w-4 h-4 mt-1"
           >
             <path
               strokeLinecap="round"
@@ -58,7 +62,7 @@ const SummaryProduct = ({ product }) => {
         </button>
         <button
           type="button"
-          className="rounded-md flex gap-2 px-5 py-2 font-bold uppercase shadow bg-red-600 w-full hover:opacity-60 mt-3
+          className="rounded-md flex gap-2 px-5 py-2 mt-3 shadow font-bold uppercase bg-red-600 w-full hover:opacity-60 
           "
           //   onClick={() => handleChangeModalQuestion(product.id)}
           onClick={() => handleDeleteProduct(product.id)}
@@ -67,9 +71,9 @@ const SummaryProduct = ({ product }) => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
+            strokeWidth={1}
             stroke="currentColor"
-            className="w-4 h-4 mt-1 mr-1"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"

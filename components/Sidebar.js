@@ -2,20 +2,22 @@ import Image from "next/image"
 import useKiosk from "../hooks/useKiosk"
 import Category from "./Category"
 
-const Sidebar = () => {
+const Sidebar = ({ onBtnClick }) => {
   const { category } = useKiosk()
   return (
     <>
       <Image
-        className="mx-auto mt-2 dark:bg-indigo-900 bg-gray-100 rounded-t-full rounded-bl-full rounded-rt-full"
+        className="mx-auto dark:bg-slate-700 bg-gray-100 pr-1 rounded-t-full"
         width={200}
         height={100}
         src="/assets/img/logo.svg"
         alt="image logo"
       />
-      <nav className="mt-7 px-2">
+      <nav className="sm:mt-5 mt-3 px-2">
         {category &&
-          category.map((cat) => <Category key={cat.id} category={cat} />)}
+          category.map((cat) => (
+            <Category key={cat.id} category={cat} onBtnClick={onBtnClick} />
+          ))}
       </nav>
     </>
   )

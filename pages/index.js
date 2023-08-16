@@ -2,18 +2,18 @@
 import Layout from "../layout/layout"
 import useKiosk from "../hooks/useKiosk"
 import Product from "../components/Product"
-import { products } from "../prisma/data/products"
-import Image from "next/image"
 
 export default function Home({}) {
   const { currentCategory } = useKiosk()
   return (
     <Layout pagina={`Menú ${currentCategory?.name}`}>
-      <h1 className="text-4xl font-black">{currentCategory?.name}</h1>
-      <p className="text-2xl my-10">
+      <h1 className="text-2xl sm:text-4xl font-black">
+        {currentCategory?.name}
+      </h1>
+      <p className="text-xl sm:text-2xl my-5 sm:my-10">
         Choose and customize your order here below
       </p>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4">
+      <div className="grid gap-1 md:gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
         {/* <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"> tambien puede ser 3 columnas en mi pantalla*/}
         {currentCategory?.products?.map((prod) => (
           <Product key={prod.id} products={prod} />

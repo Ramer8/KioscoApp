@@ -6,6 +6,7 @@ import Steps from "../components/Steps"
 import ModalProduct from "../components/ModalProduct"
 import useKiosk from "../hooks/useKiosk"
 import ModalQuestion from "../components/ModalQuestion"
+import { useState } from "react"
 
 import "react-toastify/dist/ReactToastify.css"
 
@@ -23,7 +24,25 @@ const customStyles = {
 Modal.setAppElement("#__next")
 
 export default function Layout({ children, pagina }) {
+  const [scroll, setScroll] = useState("")
   const { modal, modalQuestion } = useKiosk()
+
+  const scroll2El = (elID) => {
+    window.scrollTo({
+      top: document.getElementById(elID).offsetTop - 60,
+      behavior: "smooth",
+    })
+  }
+
+  const onBtnClick = (e) => {
+    //Chequeo si la pantalla es pequeña para hacer el scroll o no.
+    if (window.innerWidth <= 767) {
+      const goto = "menu"
+      setTimeout(() => {
+        scroll2El(goto)
+      }, 100)
+    }
+  }
   return (
     <>
       <Head>
@@ -32,11 +51,13 @@ export default function Layout({ children, pagina }) {
       </Head>
       <div className="md:flex">
         <aside className="md:w-4/12 xl:w-1/4 2xl:w-1/5">
-          <Sidebar />
+          <Sidebar onBtnClick={onBtnClick} />
         </aside>
         <main className=" md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
-          <Steps />
-          <div className="p-3">{children}</div>
+          <Steps onBtnClick={onBtnClick} />
+          <div className="p-3" id="menu">
+            {children}
+          </div>
         </main>
       </div>
       {modal && (

@@ -14,9 +14,11 @@ const Product = ({ products }) => {
         width={400}
         height={500}
       />
-      <div className="grid gap-1 grid-rows-2 md:grid-rows-1 text-4xl md:text-4xl">
-        <h3 className="text-xl font-bold  md:truncate ">{name}</h3>
-        <p className="font-black text-amber-500">{formatMoney(price)}</p>
+      <div className="grid gap-1 grid-rows-2 md:grid-rows-1 ">
+        <h3 className="text-lg sm:text-xl font-bold  md:truncate ">{name}</h3>
+        <p className="font-black text-3xl sm:text-4xl text-amber-500">
+          {formatMoney(price)}
+        </p>
       </div>
       <button
         type="button"

@@ -6,9 +6,10 @@ const steps = [
   { paso: 3, name: "Total & Data ", url: "/total" },
 ]
 
-const Steps = () => {
+const Steps = ({ onBtnClick }) => {
   const { handleChangeStep, order } = useKiosk()
   const router = useRouter()
+
   const calculateProgress = () => {
     let value
     if (router.pathname === "/") {
@@ -26,16 +27,19 @@ const Steps = () => {
         {steps.map((step) => (
           <button
             key={step.paso}
-            className="text-2xl font-bold"
+            className="sm:text-2xl text-sm font-bold"
             onClick={() => {
               router.push(step.url)
               handleChangeStep(step.paso)
+              onBtnClick(step.name)
             }}
           >
             <div>
               {step.name}
               {order.length && step.paso === 2 ? (
-                <span className="text-lg font-normal">({order.length})</span>
+                <span className="text-sm sm:text-lg  font-normal">
+                  ({order.length})
+                </span>
               ) : (
                 ""
               )}
@@ -43,7 +47,7 @@ const Steps = () => {
           </button>
         ))}
       </div>
-      <div className="bg-gray-100 dark:bg-slate-800 mb-10 rounded-full mx-5">
+      <div className="bg-gray-100 dark:bg-slate-800 mb-5 sm:mb-10 rounded-full mx-5">
         <div
           className="rounded-full bg-amber-500 text-xs leading-none h-2 text-center text-white"
           style={{ width: `${calculateProgress()}%` }}

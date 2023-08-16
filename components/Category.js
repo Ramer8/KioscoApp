@@ -1,7 +1,7 @@
 import Image from "next/image"
 import useKiosk from "../hooks/useKiosk"
 
-const Category = ({ category }) => {
+const Category = ({ category, onBtnClick }) => {
   const { handleClickCategory, currentCategory } = useKiosk()
   const { name, id, icon } = category
 
@@ -18,7 +18,10 @@ const Category = ({ category }) => {
         <button
           type="button"
           className="font-bold hover:cursor-pointer flex gap-4"
-          onClick={() => handleClickCategory(id)}
+          onClick={() => {
+            handleClickCategory(id)
+            onBtnClick(name)
+          }}
         >
           <Image
             width={70}

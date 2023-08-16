@@ -11,6 +11,4 @@ Por si actualizo y luego algo falla..
 
 ///
 al hacer el dployment me da error del KioskProvider.jsx , por un error de mayusculas o nombre de archivo
-Lo cambie y dejo de andar la app. asi que tengo q resolver por ese lado quiza cambiando el nombre de archivo y no solo
-una letra.
-15hs 11/08/2023
+Lo cambie y funciono pero eslint me marca un error en app.js y en usekiosk.js porque no se actualiza que cambio del nombre del archivo

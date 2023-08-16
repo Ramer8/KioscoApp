@@ -16,13 +16,15 @@ export default function Total() {
 
   return (
     <Layout pagina="Total and check your order">
-      <h1 className="font-black text-4xl  ">Data & Total</h1>
-      <p className="text-2xl my-10 font-bold">Check your order please..</p>
-      <form className="p-5" onSubmit={putOrder}>
+      <h1 className="font-black sm:text-4xl text-2xl ">Data & Total</h1>
+      <p className="text-xl sm:text-2xl my-5 sm:my-10 font-bold">
+        Check your order please..
+      </p>
+      <form className="p-3 sm:p-5" onSubmit={putOrder}>
         <div>
           <label
             htmlFor="name"
-            className="block uppercase text-slate-500 font-bold text-xl"
+            className="block uppercase text-slate-500 font-bold text-lg sm:text-xl"
           >
             name
           </label>
@@ -35,7 +37,7 @@ export default function Total() {
           />
         </div>
         <div className="mt-10">
-          <p className="text-2xl">
+          <p className="text-xl sm:text-2xl">
             Total to pay:
             <span className="font-bold"> {formatMoney(total)}</span>
           </p>

@@ -65,6 +65,11 @@ const KioskProvider = ({ children }) => {
   }
   const handleDeleteProduct = (id) => {
     const updateProduct = order.filter((product) => product.id !== id)
+    toast.error("Product Deleted", {
+      theme: "dark",
+      draggable: true,
+      autoClose: 1500,
+    })
     setOrder(updateProduct)
   }
 
